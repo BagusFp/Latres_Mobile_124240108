@@ -194,15 +194,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: Colors.blueAccent,
                 ),
                 title: const Text(
-                  'Fitur Tambahan: Modul 7',
+                  'Fitur Tambahan',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
-                ),
-                subtitle: const Text(
-                  'Uji coba Notifikasi Lokal & Geolocator LBS',
-                  style: TextStyle(color: Colors.white54, fontSize: 12),
                 ),
                 trailing: const Icon(
                   Icons.chevron_right,

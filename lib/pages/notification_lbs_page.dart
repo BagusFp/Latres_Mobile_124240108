@@ -58,12 +58,15 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
     try {
       await NotificationService.showImmediateNotification(
         title: '🎬 NontonSkuy! - Notifikasi Langsung',
-        body: 'Halo 124240108! Ini adalah Immediate Local Notification (Modul 7).',
+        body:
+            'Halo 124240108! Ini adalah Immediate Local Notification (Modul 7).',
       );
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Immediate Notification berhasil dikirim! Periksa bar notifikasi.'),
+            content: Text(
+              'Immediate Notification berhasil dikirim! Periksa bar notifikasi.',
+            ),
             backgroundColor: Colors.green,
           ),
         );
@@ -115,7 +118,7 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF1E1E1E),
         title: const Text(
-          'Latihan Modul 7 (Notif & LBS)',
+          'Fitur Tambahan Notif Dan Lbs',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
@@ -129,32 +132,14 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Header Info
-            Container(
-              padding: const EdgeInsets.all(14),
-              decoration: BoxDecoration(
-                color: Colors.redAccent.withAlpha(25),
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.redAccent.withAlpha(80)),
-              ),
-              child: const Row(
-                children: [
-                  Icon(Icons.info_outline, color: Colors.redAccent),
-                  SizedBox(width: 12),
-                  Expanded(
-                    child: Text(
-                      'Halaman ini dibuat terpisah sebagai implementasi materi Modul 7 (Local Notification & Location-Based Services) tanpa mengganggu fungsi utama TV Show.',
-                      style: TextStyle(color: Colors.white70, fontSize: 12),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             const SizedBox(height: 20),
 
             // Card 1: Local Notification
             Card(
               color: const Color(0xFF1E1E1E),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
@@ -174,18 +159,13 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'Menggunakan package flutter_local_notifications. Menguji notifikasi langsung dan notifikasi terjadwal.',
-                      style: TextStyle(color: Colors.white60, fontSize: 13),
-                    ),
                     const SizedBox(height: 16),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton.icon(
                         onPressed: _triggerImmediateNotification,
                         icon: const Icon(Icons.send_rounded),
-                        label: const Text('Kirim Immediate Notification'),
+                        label: const Text('Kirim Notification'),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.redAccent,
                           foregroundColor: Colors.white,
@@ -201,7 +181,10 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
                       width: double.infinity,
                       child: OutlinedButton.icon(
                         onPressed: _triggerScheduledNotification,
-                        icon: const Icon(Icons.timer_outlined, color: Colors.white),
+                        icon: const Icon(
+                          Icons.timer_outlined,
+                          color: Colors.white,
+                        ),
                         label: const Text(
                           'Jadwalkan Notifikasi (5 Detik)',
                           style: TextStyle(color: Colors.white),
@@ -224,7 +207,9 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
             // Card 2: LBS (Location Based Services)
             Card(
               color: const Color(0xFF1E1E1E),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
@@ -244,11 +229,7 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'Menggunakan package geolocator untuk meminta permission dan membaca koordinat Latitude & Longitude pengguna.',
-                      style: TextStyle(color: Colors.white60, fontSize: 13),
-                    ),
+
                     const SizedBox(height: 16),
 
                     // Tampilan Hasil Koordinat
@@ -265,7 +246,10 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
                         children: [
                           Row(
                             children: [
-                              const Text('Latitude: ', style: TextStyle(color: Colors.white60)),
+                              const Text(
+                                'Latitude: ',
+                                style: TextStyle(color: Colors.white60),
+                              ),
                               Text(
                                 _currentPosition != null
                                     ? _currentPosition!.latitude.toString()
@@ -280,7 +264,10 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
                           const SizedBox(height: 6),
                           Row(
                             children: [
-                              const Text('Longitude: ', style: TextStyle(color: Colors.white60)),
+                              const Text(
+                                'Longitude: ',
+                                style: TextStyle(color: Colors.white60),
+                              ),
                               Text(
                                 _currentPosition != null
                                     ? _currentPosition!.longitude.toString()
@@ -296,7 +283,10 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
                             const SizedBox(height: 8),
                             Text(
                               'Pesan: $_locationError',
-                              style: const TextStyle(color: Colors.redAccent, fontSize: 12),
+                              style: const TextStyle(
+                                color: Colors.redAccent,
+                                fontSize: 12,
+                              ),
                             ),
                           ],
                         ],
@@ -318,7 +308,11 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
                                 ),
                               )
                             : const Icon(Icons.my_location),
-                        label: Text(_isLoadingLocation ? 'Mencari Lokasi...' : 'Cek Lokasi Saya'),
+                        label: Text(
+                          _isLoadingLocation
+                              ? 'Mencari Lokasi...'
+                              : 'Cek Lokasi Saya',
+                        ),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.teal,
                           foregroundColor: Colors.white,
@@ -339,4 +333,3 @@ class _NotificationLbsPageState extends State<NotificationLbsPage> {
     );
   }
 }
-
