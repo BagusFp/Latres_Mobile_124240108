@@ -34,7 +34,10 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: const Color(0xFF1E1E1E),
-        title: const Text('Konfirmasi Logout', style: TextStyle(color: Colors.white)),
+        title: const Text(
+          'Konfirmasi Logout',
+          style: TextStyle(color: Colors.white),
+        ),
         content: const Text(
           'Apakah Anda yakin ingin keluar dari akun?',
           style: TextStyle(color: Colors.white70),
@@ -88,11 +91,7 @@ class _ProfilePageState extends State<ProfilePage> {
             CircleAvatar(
               radius: 46,
               backgroundColor: const Color(0xFF2C2C2C),
-              child: const Icon(
-                Icons.person,
-                size: 54,
-                color: Colors.white70,
-              ),
+              child: const Icon(Icons.person, size: 54, color: Colors.white70),
             ),
             const SizedBox(height: 14),
 
@@ -108,17 +107,16 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 4),
             const Text(
               'Praktikan Pemrograman Mobile',
-              style: TextStyle(
-                color: Colors.white54,
-                fontSize: 13,
-              ),
+              style: TextStyle(color: Colors.white54, fontSize: 13),
             ),
             const SizedBox(height: 24),
 
             // Card Kesan & Pesan Praktikum
             Card(
               color: const Color(0xFF1E1E1E),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
@@ -126,7 +124,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     const Row(
                       children: [
-                        Icon(Icons.feedback_outlined, color: Colors.redAccent, size: 20),
+                        Icon(
+                          Icons.feedback_outlined,
+                          color: Colors.redAccent,
+                          size: 20,
+                        ),
                         SizedBox(width: 8),
                         Text(
                           'Kesan & Pesan Praktikum',
@@ -149,8 +151,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     const SizedBox(height: 4),
                     const Text(
-                      'Praktikum Pemrograman Aplikasi Mobile sangat seru dan menambah banyak wawasan praktis. Modul 2 hingga 7 memberikan pemahaman nyata dari pembuatan UI Widget, State Management, Navigasi, integrasi REST API HTTP, Local Storage (Hive & SharedPreferences), hingga LBS dan Notifikasi.',
-                      style: TextStyle(color: Colors.white70, fontSize: 13, height: 1.4),
+                      'Praktikum Pemrograman Aplikasi Mobile sangat seru Seperti Kata Pak Bagus Seperti Es teh Segar Yang Di hidangkan',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 13,
+                        height: 1.4,
+                      ),
                     ),
                     const SizedBox(height: 12),
                     const Text(
@@ -163,8 +169,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     const SizedBox(height: 4),
                     const Text(
-                      'Terima kasih banyak kepada seluruh Asisten Laboratorium atas bimbingan dan kesabarannya selama semester ini. Semoga asisten praktikum selalu sukses, sehat, dan praktikum ke depannya semakin inovatif!',
-                      style: TextStyle(color: Colors.white70, fontSize: 13, height: 1.4),
+                      'Semoga Cepat Lulus Kita Semua',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 13,
+                        height: 1.4,
+                      ),
                     ),
                   ],
                 ),
@@ -175,18 +185,29 @@ class _ProfilePageState extends State<ProfilePage> {
             // Menu Pintasan Fitur Tambahan: Modul 7 (Notifikasi & LBS)
             Card(
               color: const Color(0xFF1E1E1E),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
               child: ListTile(
-                leading: const Icon(Icons.hub_outlined, color: Colors.blueAccent),
+                leading: const Icon(
+                  Icons.hub_outlined,
+                  color: Colors.blueAccent,
+                ),
                 title: const Text(
                   'Fitur Tambahan: Modul 7',
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 subtitle: const Text(
                   'Uji coba Notifikasi Lokal & Geolocator LBS',
                   style: TextStyle(color: Colors.white54, fontSize: 12),
                 ),
-                trailing: const Icon(Icons.chevron_right, color: Colors.white54),
+                trailing: const Icon(
+                  Icons.chevron_right,
+                  color: Colors.white54,
+                ),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -229,4 +250,3 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
-
