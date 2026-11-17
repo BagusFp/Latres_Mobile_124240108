@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                     prefixIcon: const Icon(Icons.person, color: Colors.white70),
                     labelText: 'Username (NIM)',
                     labelStyle: const TextStyle(color: Colors.white60),
-                    hintText: 'Masukkan NIM (124240108)',
+                    hintText: 'Masukkan NIM',
                     hintStyle: const TextStyle(color: Colors.white30),
                     filled: true,
                     fillColor: const Color(0xFF1E1E1E),
@@ -170,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     labelText: 'Password',
                     labelStyle: const TextStyle(color: Colors.white60),
-                    hintText: 'Masukkan Password (123)',
+                    hintText: 'Masukkan Password',
                     hintStyle: const TextStyle(color: Colors.white30),
                     filled: true,
                     fillColor: const Color(0xFF1E1E1E),
@@ -216,52 +216,6 @@ class _LoginPageState extends State<LoginPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-
-                // Hint kredensial untuk kemudahan penguji / asisten
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1E1E1E),
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.white12),
-                  ),
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Kredensial Login:',
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      const Text(
-                        'Username: 124240108  |  Password: 123',
-                        style: TextStyle(
-                          color: Colors.white54,
-                          fontSize: 12,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      // Tombol isi otomatis untuk mempermudah testing
-                      TextButton.icon(
-                        icon: const Icon(Icons.flash_on, size: 16, color: Colors.amber),
-                        label: const Text(
-                          'Isi Otomatis Kredensial',
-                          style: TextStyle(color: Colors.amber, fontSize: 12),
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _usernameController.text = correctNIM;
-                            _passwordController.text = correctPassword;
-                          });
-                        },
-                      ),
-                    ],
                   ),
                 ),
               ],
